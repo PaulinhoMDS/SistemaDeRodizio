@@ -1,0 +1,2 @@
+# SistemaDeRodizio
+O objetivo deste projeto é reduzir o tempo de espera do cliente pelo funcionário para anotar seus pedidos, proporcionando um atendimento mais ágil, eficiente e satisfatório. 
