@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFE6E6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estrutura geral */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteúdo central */
+.conteudo {
+    text-align: center;
+}
+
+/* Título */
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+.titulo span {
+    font-weight: 700;
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin: 5px 0 20px;
+}
+
+/* Título secundário */
+.titulo-secundario {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+.descricao {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Input */
+.campo {
+    width: 463px;
+    margin: 0 auto 20px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: none;
+    background-color: #F5F5F5;
+}
+
+/* Botão */
+.botao {
+    background-color: #701818;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Lado direito */
+.lado-direito {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Mascote MAIOR */
+.lado-direito img {
+    width: 650px;
+}
+
+/* Balão MAIS ALTO */
+.balao {
+    position: absolute;
+    right: 350px;
+    top: -200px;
+
+    width: 241px;
+    height: 241px;
+    background-color: #C2BFBF;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Texto do balão */
+.balao p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Bolinhas */
+.bolinha {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #C2BFBF;
+    border-radius: 50%;
+}
+
+/* Ajustadas */
+.b1 {
+    right: 380px; 
+    top: 100px;   
+}
+
+.b2 {
+    right: 340px;
+    top: 170px;
+}
+
+.b3 {
+    right: 300px;
+    top: 230px;
+}
