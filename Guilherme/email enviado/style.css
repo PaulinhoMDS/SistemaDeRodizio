@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFE6E6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estrutura geral */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteúdo central */
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título */
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Controle de peso separado */
+.normal {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin: 5px 0 40px;
+}
+
+/* Título principal */
+.titulo-enviado {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Botão */
+.botao {
+    background-color: #701818;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Lado direito */
+.lado-direito {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* ⚠️ TAMANHO ORIGINAL (igual seu código antigo) */
+.lado-direito img {
+    width: 650px;
+}
+
+/* Balão (mantido estilo original) */
+.balao {
+    position: absolute;
+    right: 350px;
+    top: -200px;
+
+    width: 241px;
+    height: 241px;
+    background-color: #C2BFBF;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Texto do balão */
+.balao p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* ⚠️ TAMANHO ORIGINAL DAS BOLINHAS */
+.bolinha {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #C2BFBF;
+    border-radius: 50%;
+}
+
+/* POSIÇÕES ORIGINAIS */
+.b1 {
+    right: 380px; 
+    top: 100px;   
+}
+
+.b2 {
+    right: 340px;
+    top: 170px;
+}
+
+.b3 {
+    right: 300px;
+    top: 230px;
+}

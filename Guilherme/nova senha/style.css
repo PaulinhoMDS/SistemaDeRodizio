@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFE6E6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estrutura */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Conteúdo */
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Rodizio + Cozinha sobem juntos */
+.topo {
+    position: relative;
+    top: -50px;
+}
+
+/* Título */
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin: 5px 0 40px;
+}
+
+/* Título secundário */
+.titulo-secundario {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.descricao {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.campo {
+    width: 420px;
+    margin-bottom: 15px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: none;
+    background-color: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Botão */
+.botao {
+    margin-top: 10px;
+    background-color: #701818;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Mascote */
+.lado-direito {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.lado-direito img {
+    width: 650px;
+}

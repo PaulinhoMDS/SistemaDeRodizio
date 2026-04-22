@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9c9898;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTAINER FIXO (IMPEDIR ESTICAR) */
+.page {
+  width: 1440px; /* igual tela base */
+  margin: 0 auto;
+}
+
+/* HEADER */
+header {
+  background-color: #8b1a1a;
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  color: white;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.title span {
+  font-size: 14px;
+}
+
+.logout {
+  position: absolute;
+  right: 40px;
+
+  width: 48px;
+  height: 48px;
+  background: #f1f1f1;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GRID FIXO */
+.grid {
+  padding: 45px 60px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 260px);
+  gap: 40px;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  width: 260px;
+  height: 240px;
+
+  background-color: #8b1a1a;
+  border-radius: 22px;
+  padding: 12px;
+}
+
+/* INTERNO */
+.inner {
+  background-color: #f3f3f3;
+  height: 100%;
+  border-radius: 16px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TITULO */
+.inner h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* LISTA */
+.list p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* CHECK EXATO */
+.check {
+  display: flex;
+  justify-content: center;
+}
+
+/* BORDA */
+.check {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid #8ed16a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CÍRCULO INTERNO */
+.check-inner {
+  width: 26px;
+  height: 26px;
+  background-color: #8ed16a;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
