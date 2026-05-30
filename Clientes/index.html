@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rodízio MJ</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= BODY ================= */
+
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    background:#8b1111;
+
+    overflow:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    background:#8b1111;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+/* ================= TOPO ================= */
+
+.topo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding-top:25px;
+}
+
+.topo h1{
+
+    color:white;
+
+    font-weight:300;
+
+    font-size:42px;
+
+    letter-spacing:1px;
+}
+
+.topo h1 span{
+
+    font-weight:700;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:100px;
+
+    padding:0 80px;
+}
+
+/* ================= TEXTO ================= */
+
+.texto{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.texto h2{
+
+    color:white;
+
+    font-weight:300;
+
+    text-align:center;
+
+    line-height:1.1;
+
+    font-size:92px;
+}
+
+.texto h2 span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:96px;
+
+    font-weight:300;
+}
+
+/* ================= BOTÃO ================= */
+
+.btn{
+
+    margin-top:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:24px;
+
+    padding:18px 40px;
+
+    border-radius:20px;
+
+    background:#7a0e0e;
+
+    border:2px solid #5d0b0b;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#6d0b0b;
+
+    transform:translateY(-3px);
+}
+
+/* ================= MASCOTE ================= */
+
+.imagem{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.imagem img{
+
+    width:420px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(
+        0 15px 25px rgba(0,0,0,.25)
+    );
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:1000px){
+
+    .container{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .texto h2{
+
+        font-size:60px;
+    }
+
+    .texto h2 span{
+
+        font-size:70px;
+    }
+
+    .imagem img{
+
+        width:260px;
+    }
+
+    .btn{
+
+        font-size:20px;
+    }
+}
+</style>
+<body>
+
+  <section class="hero">
+
+    <header class="topo">
+      <h1>Rodízio <span>MJ</span></h1>
+    </header>
+
+
+    <div class="container">
+
+      <div class="texto">
+        <h2>
+          O limite é sua <br>
+          <span>FOME!</span>
+        </h2>
+
+        <a href="FaçaSeuPedido.html" class="btn">
+    FAÇA SEU PEDIDO
+</a>
+      </div>
+
+      <div class="imagem">
+       
+    <img  src="../images/MacosteFeliz.png" alt="Mascote MJ">
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
