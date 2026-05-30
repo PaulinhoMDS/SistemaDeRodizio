@@ -1,0 +1,307 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cozinha MJ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --vermelho:#8b1a1a;
+    --vermelho-escuro:#6d1010;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(
+        135deg,
+        var(--vermelho),
+        var(--vermelho-escuro)
+    );
+    min-height:100vh;
+}
+header{
+
+    position:relative;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+.usuario{
+
+    margin-top:10px;
+    font-size:14px;
+    opacity:.9;
+}
+.logout{
+
+    position:absolute;
+    right:30px;
+    top:30px;
+    border:none;
+    background:white;
+    color:var(--vermelho);
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.logout:hover{
+    background:#f0f0f0;
+}
+.grid{
+
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding:20px;
+}
+.card{
+
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+}
+.card h2{
+
+    text-align:center;
+    color:var(--vermelho);
+    margin-bottom:15px;
+}
+.list p{
+
+    padding:8px 0;
+    border-bottom:1px solid #eee;
+}
+.pronto{
+
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#28a745;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.pronto:hover{
+
+    background:#1f8738;
+}
+.vazio{
+    text-align:center;
+    color:white;
+    font-size:24px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+
+const usuarioLogado =
+    localStorage.getItem(
+        "usuarioLogado"
+    );
+
+if(!usuarioLogado){
+
+    alert(
+        "Área restrita para funcionários."
+    );
+
+    window.location.href =
+        "login.html";
+}
+
+</script>
+
+<header>
+
+    <h1>Pedidos da Cozinha</h1>
+
+    <p>MJ Pastelaria</p>
+
+    <div
+        class="usuario"
+        id="usuario"
+    ></div>
+
+    <button
+        class="logout"
+        onclick="logout()"
+    >
+        Sair
+    </button>
+
+</header>
+
+<div
+    class="grid"
+    id="gridPedidos"
+></div>
+
+<script>
+
+
+const usuario =
+    JSON.parse(
+        localStorage.getItem(
+            "usuarioLogado"
+        )
+    );
+
+if(usuario){
+
+    document
+        .getElementById(
+            "usuario"
+        )
+        .innerHTML =
+        `Logado como: ${usuario.email}`;
+}
+
+
+function carregarPedidos(){
+
+    const pedidos =
+        JSON.parse(
+            localStorage.getItem(
+                "pedidos"
+            )
+        ) || [];
+
+    const grid =
+        document.getElementById(
+            "gridPedidos"
+        );
+
+    grid.innerHTML = "";
+
+    if(pedidos.length === 0){
+
+        grid.innerHTML = `
+            <div class="vazio">
+                Nenhum pedido pendente.
+            </div>
+        `;
+
+        return;
+    }
+
+    pedidos.forEach(pedido => {
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+        card.className =
+            "card";
+
+        card.innerHTML = `
+
+            <h2>
+                Mesa ${pedido.mesa}
+            </h2>
+
+            <div class="list">
+
+                ${pedido.itens
+                    .map(
+                        item =>
+                        `<p>${item}</p>`
+                    )
+                    .join("")
+                }
+
+            </div>
+
+            <button
+                class="pronto"
+                onclick="concluirPedido(${pedido.id})"
+            >
+                Pedido Pronto ✓
+            </button>
+
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+function concluirPedido(id){
+
+    let pedidos =
+        JSON.parse(
+            localStorage.getItem(
+                "pedidos"
+            )
+        ) || [];
+
+    pedidos =
+        pedidos.filter(
+            pedido =>
+                pedido.id !== id
+        );
+
+    localStorage.setItem(
+
+        "pedidos",
+
+        JSON.stringify(
+            pedidos
+        )
+
+    );
+
+    carregarPedidos();
+}
+
+function logout(){
+
+    localStorage.removeItem(
+        "usuarioLogado"
+    );
+
+    window.location.href =
+        "loginInterno.html";
+}
+
+
+carregarPedidos();
+
+setInterval(
+    carregarPedidos,
+    2000
+);
+
+</script>
+
+</body>
+</html>
+

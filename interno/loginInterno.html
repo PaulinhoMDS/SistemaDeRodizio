@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Rodízio MJ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ================= LOGIN PAGE ================= */
+
+.login-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #8b1a1a,
+        #6d1010
+    );
+}
+
+/* ================= CARD ================= */
+
+.login-card{
+
+    width:100%;
+
+    max-width:1200px;
+
+    background:white;
+
+    border-radius:35px;
+
+    padding:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+}
+
+/* ================= FORM ================= */
+
+.login-content{
+
+    width:55%;
+}
+
+.login-content h1{
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:58px;
+
+    color:#8b1a1a;
+
+    margin-bottom:5px;
+}
+
+.login-content h1 span{
+
+    font-weight:700;
+}
+
+.sub{
+
+    color:#666;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+}
+
+.login-content h2{
+
+    font-size:32px;
+
+    margin-bottom:25px;
+}
+
+/* ================= INPUTS ================= */
+
+.login-content input{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#f3f3f3;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.login-content input:focus{
+
+    outline:none;
+
+    background:white;
+
+    box-shadow:
+    0 0 0 3px rgba(139,26,26,.15);
+}
+
+/* ================= ESQUECI SENHA ================= */
+
+.esqueci{
+
+    display:block;
+
+    color:#8b1a1a;
+
+    margin-bottom:25px;
+
+    cursor:pointer;
+
+    font-size:14px;
+}
+
+.esqueci:hover{
+
+    text-decoration:underline;
+}
+
+/* ================= BOTÃO ================= */
+
+.login-content button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#8b1a1a;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-content button:hover{
+
+    background:#6d1010;
+
+    transform:translateY(-2px);
+}
+
+/* ================= MASCOTE ================= */
+
+.mascote{
+
+    width:45%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+}
+
+.mascote::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+
+    height:380px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(139,26,26,.12),
+        transparent 70%
+    );
+
+    z-index:1;
+}
+
+.mascote img{
+
+    width:430px;
+
+    max-width:100%;
+
+    position:relative;
+
+    z-index:2;
+
+    filter:
+    drop-shadow(
+        0 20px 30px rgba(0,0,0,.25)
+    );
+
+    transition:.3s;
+}
+
+.mascote img:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+/* ================= ERRO ================= */
+
+.erro{
+
+    display:none;
+
+    color:#dc3545;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+/* ================= CREDENCIAIS ================= */
+
+.credenciais{
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#f8f8f8;
+
+    border-left:5px solid #8b1a1a;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:900px){
+
+    .login-card{
+
+        flex-direction:column;
+
+        padding:35px;
+    }
+
+    .login-content{
+
+        width:100%;
+    }
+
+    .login-content h1{
+
+        font-size:42px;
+    }
+
+    .login-content h2{
+
+        font-size:26px;
+    }
+
+    .mascote{
+
+        width:100%;
+
+        margin-top:30px;
+    }
+
+    .mascote::before{
+
+        width:250px;
+
+        height:250px;
+    }
+
+    .mascote img{
+
+        width:250px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-content">
+
+            <h1>
+                Rodízio <span>MJ</span>
+            </h1>
+
+            <p class="sub">
+                Cozinha
+            </p>
+
+            <h2>Login Administrativo</h2>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Digite seu email"
+            >
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+            >
+
+            <span
+                class="esqueci"
+                onclick="window.location.href='recuperarSenha.html'"
+                style="cursor:pointer;"
+            >
+                Esqueci a senha
+            </span>
+
+            <div
+                class="erro"
+                id="erroLogin"
+            >
+                Email ou senha inválidos.
+            </div>
+
+            <button onclick="fazerLogin()">
+                Acessar
+            </button>
+
+            <!-- APENAS PARA TESTES -->
+
+            <div class="credenciais">
+
+                <strong>
+                    Credenciais de teste
+                </strong>
+
+                <br><br>
+
+                Email:
+                cozinha@mj.com
+
+                <br>
+
+                Senha:
+                123456
+
+                <hr style="margin:10px 0;">
+
+                Email:
+                chef@mj.com
+
+                <br>
+
+                Senha:
+                chef123
+
+        
+<script>
+
+/*
+    Usuários autorizados
+*/
+
+const usuarios = [
+
+    {
+        email: "cozinha@mj.com",
+        senha: "123456",
+        cargo: "cozinha"
+    },
+
+    {
+        email: "chef@mj.com",
+        senha: "chef123",
+        cargo: "admin"
+    }
+
+];
+
+function fazerLogin(){
+
+    const email =
+        document.getElementById(
+            "email"
+        ).value;
+
+    const senha =
+        document.getElementById(
+            "senha"
+        ).value;
+
+    const erro =
+        document.getElementById(
+            "erroLogin"
+        );
+
+    const usuario =
+        usuarios.find(u =>
+
+            u.email === email &&
+            u.senha === senha
+
+        );
+
+    if(!usuario){
+
+        erro.style.display =
+            "block";
+
+        return;
+    }
+
+    localStorage.setItem(
+
+        "usuarioLogado",
+
+        JSON.stringify({
+
+            email: usuario.email,
+
+            cargo: usuario.cargo,
+
+            dataLogin:
+                new Date()
+
+        })
+
+    );
+
+    window.location.href =
+        "cozinha.html";
+}
+
+</script>
+
+</body>
+</html>
