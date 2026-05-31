@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Faça seu Pedido - Rodízio MJ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --vermelho:#8b1a1a;
+    --vermelho-escuro:#6d1010;
+    --cinza:#ece7e7;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--cinza);
+}
+
+/* HEADER */
+
+header{
+    background:var(--vermelho);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-family:'Montserrat';
+    font-size:48px;
+}
+
+header span{
+    font-weight:bold;
+}
+
+/* TOPO */
+
+.boas-vindas{
+
+    width:90%;
+    margin:30px auto;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.mascote{
+
+    width:120px;
+}
+
+.mensagem{
+
+    flex:1;
+
+    background:var(--vermelho);
+
+    color:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    font-size:24px;
+}
+
+/* MESA */
+
+.area-mesa{
+
+    width:90%;
+
+    margin:auto;
+
+    margin-bottom:25px;
+}
+
+.area-mesa input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+}
+
+/* CATEGORIAS */
+
+.categorias{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.categorias button{
+
+    width:30%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--vermelho);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.categorias button:hover{
+
+    background:var(--vermelho-escuro);
+}
+
+/* BANNER */
+
+.banner{
+
+    width:90%;
+
+    margin:40px auto;
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+.banner h2{
+
+    background:var(--vermelho);
+
+    color:white;
+
+    text-align:center;
+
+    padding:12px;
+}
+
+.banner img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+}
+
+/* PRODUTOS */
+
+.catalogo{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.produto{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.produto img{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.info{
+
+    flex:1;
+
+    margin-left:25px;
+}
+
+.info h3{
+
+    font-size:32px;
+}
+
+.info p{
+
+    font-size:18px;
+}
+
+.btn-add{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--vermelho);
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+/* PEDIDO */
+
+.pedido{
+
+    width:90%;
+
+    margin:40px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+}
+
+.pedido h2{
+
+    margin-bottom:20px;
+}
+
+.item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px;
+
+    border-bottom:1px solid #ddd;
+}
+
+.remover{
+
+    background:#dc3545;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+}
+
+.enviar{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#28a745;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.enviar:hover{
+
+    background:#218838;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Rodízio <span>MJ</span></h1>
+
+</header>
+
+<div class="boas-vindas">
+
+    <img
+        src="./../images/MacosteFeliz.png"
+        class="mascote"
+    >
+
+    <div class="mensagem">
+
+        Seja bem-vindo ao MJ Pastéis.
+        Temos o melhor rodízio de pastéis da América Latina!
+
+    </div>
+
+</div>
+
+<div class="area-mesa">
+
+    <input
+        type="number"
+        id="mesa"
+        placeholder="Digite o número da mesa"
+    >
+
+</div>
+
+<div class="categorias">
+
+    <button onclick="mostrarCategoria('pasteis')">
+        Pastéis
+    </button>
+
+    <button onclick="mostrarCategoria('bebidas')">
+        Bebidas
+    </button>
+
+    <button onclick="mostrarCategoria('sobremesas')">
+        Sobremesas
+    </button>
+
+</div>
+
+<div class="banner">
+
+    <h2 id="tituloCategoria">
+        Pastéis Artesanais
+    </h2>
+
+    <img
+        id="bannerCategoria"
+        src="./../images/banner.png"
+    >
+
+</div>
+
+<div
+    id="catalogo"
+    class="catalogo"
+></div>
+
+<div class="pedido">
+
+    <h2>Pedido Atual</h2>
+
+    <div id="listaPedido"></div>
+
+    <button
+        class="enviar"
+        onclick="enviarPedido()"
+    >
+        Enviar Pedido
+    </button>
+
+</div>
+
+<script>
+
+let itens = [];
+
+const produtos = {
+
+pasteis:[
+
+{
+nome:"Pastel de Carne",
+descricao:"Carne moída temperada",
+imagem:"./../images/carne.jpg"
+},
+
+{
+nome:"Pastel de Queijo",
+descricao:"Queijo mussarela",
+imagem:"./../images/queijo.jpeg"
+},
+
+{
+nome:"Pastel de Pizza",
+descricao:"Calabresa e queijo",
+imagem:"./../images/pizza.webp"
+},
+
+{
+nome:"Pastel de Frango",
+descricao:"Frango com catupiry",
+imagem:"./../images/frango.jpg"
+}
+
+],
+
+bebidas:[
+
+{
+nome:"Coca-Cola",
+descricao:"Lata 350ml",
+imagem:"./../images/coca.png"
+},
+
+{
+nome:"Guaraná",
+descricao:"Lata 350ml",
+imagem:"./../images/guarana.webp"
+},
+
+{
+nome:"Suco Natural",
+descricao:"300ml",
+imagem:"./../images/suco.png"
+}
+
+],
+
+sobremesas:[
+
+{
+nome:"Pastel de Chocolate",
+descricao:"Chocolate ao leite",
+imagem:"./../images/chocolate.avif"
+},
+
+{
+nome:"Pastel de Banana",
+descricao:"Banana e canela",
+imagem:"./../images/banana.jpg"
+},
+
+{
+nome:"Sorvete",
+descricao:"Taça especial",
+imagem:"./../images/sorvete.jpg"
+}
+
+]
+
+};
+
+function mostrarCategoria(categoria){
+
+    const catalogo =
+        document.getElementById("catalogo");
+
+    catalogo.innerHTML = "";
+
+    document.getElementById("tituloCategoria").innerText =
+        categoria.charAt(0).toUpperCase() +
+        categoria.slice(1);
+
+    produtos[categoria].forEach(produto=>{
+
+        catalogo.innerHTML += `
+
+        <div class="produto">
+
+            <img src="${produto.imagem}">
+
+            <div class="info">
+
+                <h3>${produto.nome}</h3>
+
+                <p>${produto.descricao}</p>
+
+            </div>
+
+            <button
+                class="btn-add"
+                onclick="adicionarItem('${produto.nome}')"
+            >
+                +
+            </button>
+
+        </div>
+
+        `;
+    });
+}
+
+function adicionarItem(item){
+
+    itens.push(item);
+
+    atualizarLista();
+}
+
+function removerItem(indice){
+
+    itens.splice(indice,1);
+
+    atualizarLista();
+}
+
+function atualizarLista(){
+
+    const lista =
+        document.getElementById("listaPedido");
+
+    lista.innerHTML = "";
+
+    itens.forEach((item,index)=>{
+
+        lista.innerHTML += `
+
+        <div class="item">
+
+            <span>${item}</span>
+
+            <button
+                class="remover"
+                onclick="removerItem(${index})"
+            >
+                Remover
+            </button>
+
+        </div>
+
+        `;
+    });
+}
+
+function enviarPedido(){
+
+    const mesa =
+        document.getElementById("mesa").value;
+
+    if(!mesa){
+
+        alert("Informe a mesa.");
+
+        return;
+    }
+
+    if(itens.length === 0){
+
+        alert("Adicione itens ao pedido.");
+
+        return;
+    }
+
+    const pedidos =
+        JSON.parse(
+            localStorage.getItem("pedidos")
+        ) || [];
+
+    pedidos.push({
+
+        id: Date.now(),
+
+        mesa: mesa,
+
+        itens: [...itens],
+
+        status:"Pendente"
+
+    });
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(pedidos)
+    );
+
+    alert("Pedido enviado!");
+
+    itens = [];
+
+    atualizarLista();
+
+    document.getElementById("mesa").value="";
+}
+
+mostrarCategoria("pasteis");
+
+</script>
+
+</body>
+</html>
